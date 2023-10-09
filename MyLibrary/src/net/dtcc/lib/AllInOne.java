@@ -2,7 +2,7 @@ package net.dtcc.lib;
 
 public class AllInOne {
 	// Area methods
-	
+	// test
 	
 	// Fractions methods
 
