@@ -1,8 +1,134 @@
 package net.dtcc.lib;
 
 public class AllInOne {
+    // Hugo codes start
+
 	// Area methods
-	// test
+    public double CalcRectangleArea(double b, double h) {
+		return b * h;
+	}
+	
+	public double CalcSquareArea(double s) {
+		return s * s;
+	}
+	
+	public double CalcTriangleArea(double b, double h) {
+		return 0.5 * (b * h);
+	}
+	
+	public double CalcCircleArea(double radius) {
+		return Math.PI * (radius * radius);
+	}
+	
+	public double CalcTrapezoidArea(double base, double base2, double h) {
+		return 0.5 * h * (base + base2);
+		
+	}
+	
+	public double CalcEllipseArea(double radius1, double radius2) {
+		return Math.PI * radius1 * radius2;
+	}
+	
+	public double CalcPentagonArea(double apothem, double side) {
+		return 0.5 * apothem * (5 * side);
+		
+	}
+	
+	public double CalcParalleglogramArea(double base, double height) {
+		return base * height;
+	}
+	
+	public double CalcRhombusArea(double distance1, double distance2) {
+		return 0.5 * distance1 * distance2;
+	}
+	
+	public double CalcHexagonArea(double side) {
+		return (3/2) *  Math.sqrt(3) * (side*side);
+	}
+	
+	public double CalcPolygonArea(double perimeter, double apothem) {
+		return 0.5 * perimeter * apothem;
+	}
+	
+	
+	//Fraction methods
+	
+	public double FractionAddition(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int commonDenominator = denominator1 * denominator2;
+		int newNumerator1 = numerator1 * denominator2;
+		int newNumerator2 = numerator2 * denominator1;
+		
+		int finalNumerator = newNumerator1 + newNumerator2;
+		return finalNumerator/commonDenominator;
+		
+		
+		
+	}
+	
+	public double FractionSubtraction(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int commonDenominator = denominator1 * denominator2;
+		int newNumerator1 = numerator1 * denominator2;
+		int newNumerator2 = numerator2 * denominator1;
+		
+		int finalNumerator = newNumerator1 - newNumerator2;
+		return finalNumerator/commonDenominator;
+		
+		
+		
+	}
+	
+	public double FractionMultiplication(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int finalNumerator = numerator1 * numerator2;
+		int commonDenominator = denominator1 * denominator2;
+		
+		return finalNumerator/commonDenominator;
+	}
+	
+	public double FractionDivision(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int finalNumerator = numerator1 * denominator2;
+		int finalDenominator = denominator1 * numerator2;
+		return finalNumerator/finalDenominator;
+	}
+	
+//Temperature Methods
+	public double CelciusToFahren(double c) {
+		return (9/5)* c + 32;
+	}
+	public double CelciusToKelvin(double c) {
+		return c + 273.15;
+	}
+	public double FahrenToCelcius(double f) {
+		return (f - 32) * (5/9);
+	}
+	public double KelvinToCelcius(double k) {
+		return k - 273.15;
+	}
+	
+	
+	
+	
+	
+	
+	
+//Volume Methods
+	public double CubeVolume(double edge) {
+		return Math.pow(edge, 3);
+		
+	}
+	public double BoxVolume(double length, double width, double height) {
+		return length * width * height;
+	}
+	public double CylinderVolume(double radius, double height) {
+		return Math.PI * Math.pow(radius, 2) * height;
+	}
+	public double ConeVolume(double radius, double height) {
+		return Math.PI * Math.pow(radius, 2) * (height/3);
+		
+	}
+	public double SphereVolume(double radius) {
+		return (4/3)* Math.PI * Math.pow(radius, 3);
+		
+	}
 	
 	// Fractions methods
 
@@ -19,10 +145,8 @@ public class AllInOne {
         }
         return decimal;
     }
-
-    // Temperature methods
-
-    // Volume methods
+    // Hugo codes ends
+    
 
  
 
