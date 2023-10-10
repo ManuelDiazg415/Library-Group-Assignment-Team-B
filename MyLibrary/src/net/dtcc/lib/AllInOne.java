@@ -1,141 +1,129 @@
 package net.dtcc.lib;
 
 public class AllInOne {
-    // Hugo codes start
-
-	// Area methods
-    public double CalcRectangleArea(double b, double h) {
-		return b * h;
-	}
+// 	methods
+	public double CalcRectangleArea(double l, double w) {
+		return l * w;
+		
+	}// end rectangle method
 	
-	public double CalcSquareArea(double s) {
-		return s * s;
-	}
+	public double CalcSquareArea(double l) {
+		return Math.pow(l, 2) ;
+		
+	}// end square method
 	
 	public double CalcTriangleArea(double b, double h) {
-		return 0.5 * (b * h);
-	}
-	
-	public double CalcCircleArea(double radius) {
-		return Math.PI * (radius * radius);
-	}
-	
-	public double CalcTrapezoidArea(double base, double base2, double h) {
-		return 0.5 * h * (base + base2);
+		return (b * h)/2 ;
 		
-	}
+	}// end Triangle method
 	
-	public double CalcEllipseArea(double radius1, double radius2) {
-		return Math.PI * radius1 * radius2;
-	}
-	
-	public double CalcPentagonArea(double apothem, double side) {
-		return 0.5 * apothem * (5 * side);
+	public double CalcCircleArea(double r) {
+		return Math.PI * Math.pow(r, 2) ;
 		
-	}
-	
-	public double CalcParalleglogramArea(double base, double height) {
-		return base * height;
-	}
-	
-	public double CalcRhombusArea(double distance1, double distance2) {
-		return 0.5 * distance1 * distance2;
-	}
-	
-	public double CalcHexagonArea(double side) {
-		return (3/2) *  Math.sqrt(3) * (side*side);
-	}
-	
-	public double CalcPolygonArea(double perimeter, double apothem) {
-		return 0.5 * perimeter * apothem;
-	}
-	
-	
-	//Fraction methods
-	
-	public double FractionAddition(int numerator1, int denominator1, int numerator2, int denominator2) {
-		int commonDenominator = denominator1 * denominator2;
-		int newNumerator1 = numerator1 * denominator2;
-		int newNumerator2 = numerator2 * denominator1;
+	}// end Circle method
+	public double CalcTrapezoidArea(double a, double b, double h) {
+		return ((a + b)/2) * h;
 		
-		int finalNumerator = newNumerator1 + newNumerator2;
-		return finalNumerator/commonDenominator;
+	}// end Trapezoid method
+	
+	public double ElCalcEllipseArealipse(double a, double b) {
+		return Math.PI * a * b ;
 		
+	}// end Ellipse method
+	
+	public double areaOfPentagon(double a) {
+		return (a * Math.pow(a, 2)) / (4 * Math.tan(Math.PI / a));
 		
+	}// end Pentagon method
+	
+	public double CalcParalleglogramArea(double b, double h) {
+		return b * h;
 		
-	}
+	}// end Parallelogram method
 	
-	public double FractionSubtraction(int numerator1, int denominator1, int numerator2, int denominator2) {
-		int commonDenominator = denominator1 * denominator2;
-		int newNumerator1 = numerator1 * denominator2;
-		int newNumerator2 = numerator2 * denominator1;
+	public double CalcRhombusArea(double p, double q) {
+		return (p * q)/2;
 		
-		int finalNumerator = newNumerator1 - newNumerator2;
-		return finalNumerator/commonDenominator;
+	}// end Rhombus method
+	
+	public double CalcHexagonArea(double a) {
+		return ((3 * Math.sqrt(3))/2) * Math.pow(a, 2);
 		
+	}// end Hexagon method
+	
+	// this is for a general Polygon assuming all sides are equal,  n = number of sides, a = first side length.
+	public double CalcPolygonArea(double n, double a) {
+		double angle = Math.toRadians(180/n);
+	    angle = Math.tan(angle);
+		return ((a * a * n)/(4*angle));
 		
-		
-	}
-	
-	public double FractionMultiplication(int numerator1, int denominator1, int numerator2, int denominator2) {
-		int finalNumerator = numerator1 * numerator2;
-		int commonDenominator = denominator1 * denominator2;
-		
-		return finalNumerator/commonDenominator;
-	}
-	
-	public double FractionDivision(int numerator1, int denominator1, int numerator2, int denominator2) {
-		int finalNumerator = numerator1 * denominator2;
-		int finalDenominator = denominator1 * numerator2;
-		return finalNumerator/finalDenominator;
-	}
-	
-//Temperature Methods
-	public double CelciusToFahren(double c) {
-		return (9/5)* c + 32;
-	}
-	public double CelciusToKelvin(double c) {
-		return c + 273.15;
-	}
-	public double FahrenToCelcius(double f) {
-		return (f - 32) * (5/9);
-	}
-	public double KelvinToCelcius(double k) {
-		return k - 273.15;
-	}
+	}// end Polygon method.
 	
 	
-	
-	
-	
-	
-	
-//Volume Methods
+	//Volume Methods
 	public double CubeVolume(double edge) {
 		return Math.pow(edge, 3);
-		
 	}
+	
 	public double BoxVolume(double length, double width, double height) {
 		return length * width * height;
 	}
+	
 	public double CylinderVolume(double radius, double height) {
 		return Math.PI * Math.pow(radius, 2) * height;
 	}
-	public double ConeVolume(double radius, double height) {
-		return Math.PI * Math.pow(radius, 2) * (height/3);
-		
-	}
-	public double SphereVolume(double radius) {
-		return (4/3)* Math.PI * Math.pow(radius, 3);
-		
-	}
-	// Hugo codes ends
-	// Fractions methods
-
 	
-    // Binary methods
+	public double ConeVolume(double radius, double height) {
+		return Math.PI * Math.pow(radius, 2) * (height/3);	
+	}
+	
+	public double SphereVolume(double radius) {
+		return ( 4.0 / 3.0 ) * Math.PI * Math.pow(radius , 3 );
+	}
+	
+	
+	
+	
+    // Perimeter methods
+    public double perimeterOfSquare(double sideLength) {
+        return 4 * sideLength;
+    }
+
+    public double perimeterOfRectangle(double length, double width) {
+        return 2 * (length + width);
+    }
+
+    // Circumference methods
+    public double circumferenceOfCircle(double radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    // Pythagorus theorem
+    public double pythagorasTheorem(double a, double b) {
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    }
+    
+    //Temperature Methods
+  	public double CelciusToFahren(double c) {
+  		return (c * 9/5) + 32;
+  	}
+  	
+  	public double CelciusToKelvin(double c) {
+  		return c + 273.15;
+  	}
+  	
+  	public double FahrenToCelcius(double f) {
+  		return (f - 32) * 5/9;
+  	}
+  	
+  	public double FahrenToKelvin(double f) {
+  		return (f - 32) * 5/9 + 273.15;
+  	}
+  	
+  	
+  	// Binary methods
     public int binaryToDecimal(String binary) {
-        // Implement binary to decimal conversion and return the result as an int
+
         int decimal = 0;
         int binaryLength = binary.length();
         for (int i = 0; i < binaryLength; i++) {
@@ -145,33 +133,33 @@ public class AllInOne {
         }
         return decimal;
     }
-    
-    
-
- 
-
-
-    // Perimeter methods
-    public double perimeterOfSquare(double sideLength) {
-
-        return 4 * sideLength;
-    }
-
-    public double perimeterOfRectangle(double length, double width) {
-
-        return 2 * (length + width);
-    }
-
-    // Circumference methods
-    public double circumferenceOfCircle(double radius) {
-
-        return 2 * Math.PI * radius;
-    }
-
-    // Pythagorus theorem
-    public double pythagorasTheorem(double a, double b) {
-      
-        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-    }
+		
 	
+	// Fractions 
+    public String FractionAddition(int numerator1, int denominator1, int numerator2, int denominator2) {
+    	int x =  numerator1*denominator2 + numerator2*denominator1;
+    	int comd = denominator1 * denominator2;
+  
+		return (x + "/" + comd);		
+	}
+	
+	public String FractionSubtraction(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int x =  numerator1*denominator2 - numerator2*denominator1;
+    	int comd = denominator1 * denominator2;
+  
+		return (x + "/" + comd);	
+	}
+	
+	public String FractionMultiplication(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int finalNumerator = numerator1 * numerator2;
+		int commonDenominator = denominator1 * denominator2;
+		
+		return (finalNumerator + "/" + commonDenominator);
+	}
+	
+	public String FractionDivision(int numerator1, int denominator1, int numerator2, int denominator2) {
+		int finalNumerator = numerator1 * denominator2;
+		int finalDenominator = denominator1 * numerator2;
+		return (finalNumerator + "/" + finalDenominator);
+	}
 }// end AllInOne class
